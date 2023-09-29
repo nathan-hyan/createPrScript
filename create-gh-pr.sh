@@ -16,7 +16,7 @@
 # where the script is
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-baseFile=${SCRIPT_DIR}/changes.txt
+baseFile=${SCRIPT_DIR}/pr.txt
 
 # Read the text file into a variable for manipulation
 
