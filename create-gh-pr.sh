@@ -8,7 +8,7 @@
 # So first, I want this script to be functional
 # independently from where it's executed
 # I'm thinking to ship the script with a
-# pr.txt file where the actual PR is.
+# pr.txt file where the actual PR message is.
 
 # This line takes care of that, and wherever the
 # script is executed it does not matter
@@ -265,12 +265,12 @@ basePrMessage=$(echo -e "${basePrMessage//--ISSUE-LINK--/$issueLink}")
 
 repo_url=$(git config remote.origin.url | sed 's|https://\(.*\).git|https://\1|')
 
-printBold "PR Ready to be open! This is the result\n"
+printSuccess "PR Ready to be open! This is the result\n"
 echo -e "${basePrMessage}\n\n"
 
 while true; do
 
-  printBold "\nYou'll be redirected to: $repo_url, Do you want to continue? (y/n): "
+  printBold "\nYou'll be redirected to: $repo_url. Do you want to continue? (y/n): "
   read -r yn
 
   case $yn in
